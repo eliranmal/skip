@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "skip",
+  "description": "skips all things",
+  "version": "0.1.0",
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.sdarot.pm/watch/*"],
+      "js": ["lib/jquery.js", "skip/sdarot-pm.js"]
+    },
+    {
+      "matches": ["http://seretil.me/*"],
+      "js": ["skip/seret-il-me.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["http://adf.ly/*"],
+      "js": ["lib/jquery.js", "skip/ad-fly.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
